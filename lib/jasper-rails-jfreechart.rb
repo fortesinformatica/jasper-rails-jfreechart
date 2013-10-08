@@ -22,6 +22,7 @@
 
 require "jasper-rails-jfreechart/version"
 require "rjb"
+require "rjb-loader"
 
 module JasperRails
   module JFreeChart
@@ -31,10 +32,10 @@ module JasperRails
         config.classpath << File::PATH_SEPARATOR + File.expand_path(path)
       end
     end
-    
+
     RjbLoader.after_load do |config|
-      Rjb::import 'org.jfree.chart.JFreeChart'    
+      Rjb::import 'org.jfree.chart.JFreeChart'
     end
-    
-  end  
+
+  end
 end
